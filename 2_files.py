@@ -21,6 +21,12 @@ def main():
         len_f = len(content)
         cou_f = len(content.split())
         inst_f = content.replace('.', '!')
+        f.seek(0)
+
+        for line in f:
+            line = line.upper()
+            line = line.replace('\n', '')
+            print(line)
         
     with open('referat2.txt', 'w', encoding='utf-8') as r:
         r.write(f'Количество знаков: {len_f}, \nКол-во слов: {cou_f}, \n\n{inst_f}')
